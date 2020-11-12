@@ -14,20 +14,21 @@ export default function Button(props) {
     if (props.onClick) props.onClick();
   };
 
-  if (props.isDisabled || props.isLoading)
+  if (props.isDisabled || props.isLoading) {
     if (props.isDisabled) className.push("disabled");
-  return (
-    <span className={className.join(" ")} style={props.style}>
-      {props.isLoading ? (
-        <>
-          <span className="spinner-border spinner-border-sm mx-5"></span>
-          <span className="sr-only"></span>
-        </>
-      ) : (
-        props.children
-      )}
-    </span>
-  );
+    return (
+      <span className={className.join(" ")} style={props.style}>
+        {props.isLoading ? (
+          <>
+            <span className="spinner-border spinner-border-sm mx-5"></span>
+            <span className="sr-only">Loading...</span>
+          </>
+        ) : (
+          props.children
+        )}
+      </span>
+    );
+  }
 
   if (props.type === "link") {
     if (props.isExternal) {
@@ -66,7 +67,6 @@ export default function Button(props) {
     </button>
   );
 }
-
 Button.propTypes = {
   type: propTypes.oneOf(["button", "link"]),
   onClick: propTypes.func,
@@ -74,6 +74,7 @@ Button.propTypes = {
   href: propTypes.string,
   className: propTypes.string,
   isDisabled: propTypes.bool,
+  isExternal: propTypes.bool,
   isLoading: propTypes.bool,
   isSmall: propTypes.bool,
   isLarge: propTypes.bool,
