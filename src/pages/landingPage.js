@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-
-import Button from "elements/Button";
+import Header from "parts/Header";
+// import Button from "elements/Button";
 export default class landingPage extends Component {
   render() {
     return (
