@@ -23,7 +23,7 @@ export default function Hero(props) {
             Start Next Vacation
           </h1>
           <p
-            className="mb-5 font-weight-light text-gray-500 w-75"
+            className="mb-4 font-weight-light text-gray-500 w-75"
             style={{ lineHeight: "170%" }}
           >
             We provide what you need to enjoy your holiday with family. Time to
@@ -38,7 +38,7 @@ export default function Hero(props) {
             Show Me Now
           </Button>
 
-          <div className="row mt-5">
+          <div className="row" style={{ marginTop: 80 }}>
             <div className="col-auto" style={{ marginRight: 35 }}>
               <img
                 width="36"
