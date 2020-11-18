@@ -7,17 +7,14 @@ import IconTraveler from "assets/images/icons/icon-traveler.svg/";
 import IconTreasure from "assets/images/icons/icon-treasure.svg/";
 
 import Button from "elements/Button";
+
+import FormatNumber from "utils/FormatNumber";
 export default function Hero(props) {
   function showMostPicked() {
     window.scrollTo({
       top: props.refMostPicked.current.offsetTop - 30,
       behavior: "smooth",
     });
-  }
-
-  function numberFormat(number) {
-    const formatNumbering = new Intl.NumberFormat("id-ID");
-    return formatNumbering.format(number);
   }
 
   return (
@@ -53,7 +50,7 @@ export default function Hero(props) {
                 alt={`${props.data.travelers} Traveler`}
               />
               <h6 className="mt-3">
-                {numberFormat(props.data.travelers)}{" "}
+                {FormatNumber(props.data.travelers)}{" "}
                 <span className="text-gray-500 font-weight-light">
                   Travelers
                 </span>
@@ -67,7 +64,7 @@ export default function Hero(props) {
                 alt={`${props.data.treasures} Treasures`}
               />
               <h6 className="mt-3">
-                {numberFormat(props.data.treasures)}{" "}
+                {FormatNumber(props.data.treasures)}{" "}
                 <span className="text-gray-500 font-weight-light">
                   Treasures
                 </span>
@@ -81,7 +78,7 @@ export default function Hero(props) {
                 alt={`${props.data.cities} Cities`}
               />
               <h6 className="mt-3">
-                {numberFormat(props.data.cities)}{" "}
+                {FormatNumber(props.data.cities)}{" "}
                 <span className="text-gray-500 font-weight-light">Cities</span>
               </h6>
             </div>
