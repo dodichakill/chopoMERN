@@ -22,7 +22,10 @@ export default function Hero(props) {
             Forget Busy Work, <br />
             Start Next Vacation
           </h1>
-          <p className="mb-5 font-weight-light text-gray-500 w-75">
+          <p
+            className="mb-5 font-weight-light text-gray-500 w-75"
+            style={{ lineHeight: "170%" }}
+          >
             We provide what you need to enjoy your holiday with family. Time to
             make another memorable moments.
           </p>
