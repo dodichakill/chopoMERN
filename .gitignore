@@ -5,6 +5,9 @@
 /.pnp
 .pnp.js
 
+# uji coba
+/contekan
+
 # testing
 /coverage
 
