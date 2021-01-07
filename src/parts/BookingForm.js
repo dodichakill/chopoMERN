@@ -30,6 +30,28 @@ export default class BookingForm extends Component {
     });
   };
 
+  componentDidUpdate(prevProps, PrevState) {
+    const { data } = this.state;
+
+    if (PrevState.data.date !== data.date) {
+      const startDate = new Date(data.date.startDate);
+      const endDate = new Date(data.date.endDate);
+      const countDuration = new Date(endDate - startDate).getDate();
+      this.setState({
+        data: {
+          ...this.state.data,
+          duration: countDuration,
+        },
+      });
+    }
+
+    if (PrevState.data.duration !== data.duration) {
+      const startDate = new Date(data.date.startDate);
+      const endDate = new Date(
+        startDate.setDate(startDate.getDate() + +data.duration - 1)
+      );
+    }
+  }
   render() {
     return <div></div>;
   }
