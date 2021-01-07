@@ -99,6 +99,6 @@ Number.propTypes = {
   value: propTypes.oneOfType([propTypes.string, propTypes.number]),
   onChange: propTypes.func,
   isSuffixPlural: propTypes.bool,
-  placeholder: propTypes.placeholder,
+  placeholder: propTypes.string,
   outerClassName: propTypes.string,
 };
