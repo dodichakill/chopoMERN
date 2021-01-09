@@ -1,10 +1,11 @@
 import React from "react";
-import propTypes from "prop-types";
+import Fade from "react-reveal/Fade";
 
 import { InputText } from "elements/form";
 
 export default function BookingInformation(props) {
   const { data, ItemDetails, checkout } = props;
+  console.log(ItemDetails);
   return (
     <Fade>
       <div className="container" style={{ marginBottom: 30 }}>
@@ -14,15 +15,15 @@ export default function BookingInformation(props) {
               <div className="card">
                 <figure className="img-wrapper" style={{ height: 270 }}>
                   <img
-                    src={ItemDetails.imageUrls[0].url}
-                    alt={ItemDetails.name}
                     className="img-cover"
+                    src={`${process.env.REACT_APP_HOST}/${ItemDetails.imageId[0].imageUrl}`}
+                    alt={ItemDetails.title}
                   />
                 </figure>
                 <div className="row align-items-center">
                   <div className="col">
                     <div className="meta-wrapper">
-                      <h5> {ItemDetails.name} </h5>
+                      <h5>{ItemDetails.title}</h5>
                       <span className="text-gray-500">
                         {ItemDetails.city}, {ItemDetails.country}
                       </span>
@@ -30,10 +31,10 @@ export default function BookingInformation(props) {
                   </div>
                   <div className="col-auto">
                     <span>
-                      ${+checkout.duration * ItemDetails.price} USD{" "}
-                      <span className="text-gray-500"> Per </span>{" "}
-                      {checkout.duration} {ItemDetails.unit}{" "}
-                      {+checkout.durationv > 1 ? "s" : ""}{" "}
+                      ${+checkout.duration * ItemDetails.price} USD
+                      <span className="text-gray-500"> per </span>
+                      {checkout.duration} {ItemDetails.unit}
+                      {+checkout.duration > 1 ? "s" : ""}
                     </span>
                   </div>
                 </div>
@@ -58,7 +59,7 @@ export default function BookingInformation(props) {
                 onChange={props.onChange}
               />
 
-              <label htmlFor="email">Last Name</label>
+              <label htmlFor="email">Email Address</label>
               <InputText
                 id="email"
                 name="email"
