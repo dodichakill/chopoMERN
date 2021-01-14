@@ -39,7 +39,7 @@ export default class Checkout extends Component {
   };
 
   componentDidMount() {
-    window.scrollTo(0, 0);
+    window.scroll(0, 0);
   }
 
   render() {

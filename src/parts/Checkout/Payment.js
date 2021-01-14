@@ -60,17 +60,17 @@ export default function Payment(props) {
               />
 
               <label htmlFor="bankName">Asal Bank</label>
-              <InputFile
-                accept="image/*"
+              <InputText
                 id="bankName"
                 name="bankName"
+                type="text"
                 value={data.bankName}
                 onChange={props.onChange}
               />
 
               <label htmlFor="bankHolder">Nama Pengirim</label>
-              <InputFile
-                accept="image/*"
+              <InputText
+                type="text"
                 id="bankHolder"
                 name="bankHolder"
                 value={data.bankHolder}
