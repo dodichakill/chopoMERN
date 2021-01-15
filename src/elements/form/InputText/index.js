@@ -10,8 +10,8 @@ export default function Text(props) {
     placeholder,
     name,
     prepend,
-    outerClassName,
     append,
+    outerClassName,
     inputClassName,
     errorResponse,
   } = props;
@@ -71,7 +71,7 @@ Text.defaultProps = {
   type: "text",
   pattern: "",
   placeholder: "Please type here...",
-  errorResponse: "Please match the request format",
+  errorResponse: "Please match the request format.",
 };
 
 Text.propTypes = {

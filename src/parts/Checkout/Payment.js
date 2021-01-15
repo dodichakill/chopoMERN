@@ -5,6 +5,7 @@ import { InputText, InputFile } from "elements/form";
 
 import logoBca from "assets/images/logo-bca.jpg";
 import logoMandiri from "assets/images/logo-mandiri.jpg";
+
 export default function Payment(props) {
   const { data, ItemDetails, checkout } = props;
 

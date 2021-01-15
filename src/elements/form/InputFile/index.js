@@ -26,13 +26,13 @@ export default function File(props) {
           </div>
         )}
         <input
-          type="file"
-          name={name}
           accept={accept}
           ref={refInputFile}
+          name={name}
+          className="d-none"
+          type="file"
           value={value}
           onChange={props.onChange}
-          className="d-none"
         />
         <input
           className={["form-control", inputClassName].join(" ")}
